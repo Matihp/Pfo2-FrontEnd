@@ -35,7 +35,7 @@ Debes incluir las siguientes secciones obligatorias, en este orden exacto:
 <sections>
 1. HEADER (Cabecera)
 - Navegación fija (sticky) con un fondo que se adapte al hacer scroll.
-- Logo de "Aura Athletics" a la izquierda.
+- Logo de "Contextilo Athletics" a la izquierda.
 - Menú con enlaces a: Inicio, Tecnología, Equipamiento, Testimonios, Contacto.
 - En dispositivos móviles, implementar un menú hamburguesa 100% funcional gestionado con JavaScript.
 
@@ -47,7 +47,7 @@ Debes incluir las siguientes secciones obligatorias, en este orden exacto:
 
 3. SOBRE NOSOTROS / DESCRIPCIÓN
 - Título: "Nuestra Filosofía".
-- Un texto persuasivo sobre cómo Aura Athletics diseña prendas que se adaptan al cuerpo y al movimiento.
+- Un texto persuasivo sobre cómo Contextilo Athletics diseña prendas que se adaptan al cuerpo y al movimiento.
 - Diseño en dos columnas en desktop (texto de un lado, un área de imagen simulada con CSS del otro).
 
 4. CARACTERÍSTICAS PRINCIPALES
@@ -56,7 +56,7 @@ Debes incluir las siguientes secciones obligatorias, en este orden exacto:
 - Cada tarjeta debe incluir un ícono, un título, una breve descripción y un efecto de elevación (box-shadow) al hacer hover.
 
 5. TESTIMONIOS (Reseñas)
-- Título: "Atletas Aura".
+- Título: "Atletas Contextilo".
 - 3 tarjetas de testimonios con opiniones ficticias pero realistas de deportistas.
 - Incluir nombre, deporte que practican y una calificación visual de 5 estrellas.
 
