@@ -97,7 +97,9 @@ body {
     border-left: 4px solid #3b82f6;
 }
 
-.agent-details p, .desc, .card > p {
+.agent-details p,
+.desc,
+.card>p {
     font-size: 0.9rem;
     color: #64748b;
     line-height: 1.5;
@@ -126,6 +128,7 @@ body {
     .header h1 {
         font-size: 2rem;
     }
+
     .links-grid {
         grid-template-columns: 1fr;
     }
