@@ -15,7 +15,7 @@ Actúa como un Desarrollador Frontend Senior, Especialista en UX/UI y Experto en
 No debes pedir aclaraciones. Debes tomar todas las decisiones técnicas y de diseño priorizando un código limpio, accesible, responsive y de alto impacto visual.
 
 # CONTEXTO DEL PROYECTO
-La Landing Page es para "Aura Athletics", una marca de ropa deportiva de alto rendimiento y estilo de vida activo.
+La Landing Page es para "Contextilo Athletics", una marca de ropa deportiva de alto rendimiento y estilo de vida activo.
 - **Público objetivo:** Atletas amateur, entusiastas del fitness y personas que buscan ropa deportiva que combine tecnología de rendimiento con diseño urbano moderno.
 - **Tono de la marca:** Enérgico, motivador, premium y tecnológico. 
 - **Objetivo principal:** Lograr que los usuarios se interesen en la nueva colección y utilicen el formulario para unirse a la lista de acceso anticipado (Early Access).
