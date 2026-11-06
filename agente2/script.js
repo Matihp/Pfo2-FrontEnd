@@ -6,28 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const icon = menuToggle.querySelector('i');
 
-    function toggleMenu() {
-        nav.classList.toggle('active');
-        if (nav.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
+    function setMenuOpen(open) {
+        nav.classList.toggle('active', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        icon.classList.toggle('fa-bars', !open);
+        icon.classList.toggle('fa-times', open);
     }
 
-    if (menuToggle) {
-        menuToggle.addEventListener('click', toggleMenu);
-    }
+    menuToggle.addEventListener('click', () => {
+        setMenuOpen(!nav.classList.contains('active'));
+    });
 
-    // Cerrar menú al hacer clic en un enlace
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
+        link.addEventListener('click', () => setMenuOpen(false));
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && nav.classList.contains('active')) {
+            setMenuOpen(false);
+            menuToggle.focus();
+        }
+    });
+
+    document.addEventListener('click', event => {
+        if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+            setMenuOpen(false);
+        }
+    });
+
+    window.matchMedia('(max-width: 768px)').addEventListener('change', () => {
+        setMenuOpen(false);
     });
 
     // 2. HEADER STICKY CON EFECTO AL SCROLL
@@ -66,13 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputElement = document.getElementById(inputId);
         if(inputElement && inputElement.parentElement) {
             inputElement.parentElement.classList.add('error');
+            inputElement.setAttribute('aria-invalid', 'true');
         }
     }
 
     // Función para limpiar errores
     function clearErrors() {
         const errorGroups = document.querySelectorAll('.form-group.error');
-        errorGroups.forEach(group => group.classList.remove('error'));
+        errorGroups.forEach(group => {
+            group.classList.remove('error');
+            group.querySelector('input, select').removeAttribute('aria-invalid');
+        });
     }
 
     if (form) {
@@ -107,9 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Ocultar form y mostrar éxito
                 form.style.display = 'none';
                 successMessage.classList.remove('hidden');
+                successMessage.focus();
                 
                 // Reiniciar el formulario
                 form.reset();
+            } else {
+                form.querySelector('[aria-invalid="true"]').focus();
             }
         });
 
@@ -118,9 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
         inputs.forEach(input => {
             input.addEventListener('input', () => {
                 input.parentElement.classList.remove('error');
+                input.removeAttribute('aria-invalid');
             });
             input.addEventListener('change', () => {
                 input.parentElement.classList.remove('error');
+                input.removeAttribute('aria-invalid');
             });
         });
     }
