@@ -282,6 +282,7 @@
       var submitBtn = form.querySelector('[type="submit"]');
 
       if (!validateForm()) {
+        form.querySelector('[aria-invalid="true"]').focus();
         // Shake the button on invalid submission
         submitBtn.style.animation = 'none';
         submitBtn.offsetHeight; // reflow
@@ -297,6 +298,7 @@
         // Hide form, show success message
         form.style.display = 'none';
         successMsg.classList.add('show');
+        successMsg.focus({ preventScroll: true });
 
         // Smooth scroll to success message
         successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });

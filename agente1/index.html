@@ -245,7 +245,7 @@
             <label for="name">Nombre completo</label>
             <div class="input-wrapper">
               <i class="fas fa-user input-icon"></i>
-              <input type="text" id="name" name="name" placeholder="Tu nombre completo" autocomplete="name" />
+              <input type="text" id="name" name="name" required aria-describedby="name-error" placeholder="Tu nombre completo" autocomplete="name" />
             </div>
             <span class="form-error" id="name-error" role="alert"></span>
           </div>
@@ -254,7 +254,7 @@
             <label for="email">Correo electrónico</label>
             <div class="input-wrapper">
               <i class="fas fa-envelope input-icon"></i>
-              <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" />
+              <input type="email" id="email" name="email" required aria-describedby="email-error" placeholder="tu@correo.com" autocomplete="email" />
             </div>
             <span class="form-error" id="email-error" role="alert"></span>
           </div>
@@ -263,7 +263,7 @@
             <label for="sport">Deporte principal</label>
             <div class="input-wrapper select-wrapper">
               <i class="fas fa-running input-icon"></i>
-              <select id="sport" name="sport">
+              <select id="sport" name="sport" required aria-describedby="sport-error">
                 <option value="">Selecciona tu deporte</option>
                 <option value="running">Running / Maratón</option>
                 <option value="crossfit">Crossfit / HIIT</option>
@@ -284,7 +284,7 @@
           </button>
         </form>
 
-        <div class="contact__success" id="success-message" role="alert" aria-live="polite">
+        <div class="contact__success" id="success-message" tabindex="-1" role="alert" aria-live="polite">
           <div class="success__icon"><i class="fas fa-circle-check"></i></div>
           <h3>¡Bienvenido al equipo Contextilo!</h3>
           <p>Tu solicitud de acceso anticipado fue registrada. Te contactaremos pronto con todos los detalles exclusivos.</p>

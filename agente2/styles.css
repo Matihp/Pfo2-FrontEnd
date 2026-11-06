@@ -642,12 +642,14 @@ h1, h2, h3, h4, h5, h6 {
         height: 100vh;
         background-color: var(--bg-card);
         padding: 6rem 2rem 2rem;
-        transition: right var(--transition-normal);
+        visibility: hidden;
+        transition: right var(--transition-normal), visibility var(--transition-normal);
         box-shadow: -10px 0 30px rgba(0,0,0,0.5);
         z-index: 1000;
     }
 
     .nav.active {
+        visibility: visible;
         right: 0;
     }
 
